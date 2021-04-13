@@ -1,0 +1,9 @@
+<template>
+  <div>
+    <ul>
+      <li>首页</li>
+      <li>aaaaa</li>
+      <li>bbbb</li>
+    </ul>
+  </div>
+</template>

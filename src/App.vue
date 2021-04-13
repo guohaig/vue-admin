@@ -1,11 +1,115 @@
 <template>
-  <!-- <h1>All you need is an app.vue file.</h1> -->
-  <div id="nav">
-    <!-- <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> -->
+  <div>
+    <tabbar></tabbar>
+
+    <!--路由容器 -->
+    <router-view></router-view>
   </div>
-  <router-view />
+  <!--
+  <div>
+    <h1>状态更新</h1>
+    Hello Vue - {{ myname }}
+    <button @click="handleClick()">click</button>
+    <h1>Todo</h1>
+    <input type="text" v-model="mytext" />
+    <button @click="handleAdd()">add</button>
+    <ul>
+      <li v-for="data in datalist" :key="data">
+        {{ data }}
+      </li>
+    </ul>
+
+    <h1>抽屉</h1>
+    <navbar></navbar>
+    <sidebar></sidebar>
+  </div>
+  -->
+  <!-- <div id="nav">
+     <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> 
+  </div>
+  -->
+  <!-- <router-view /> -->
 </template>
+
+<script>
+import tabbar from "./components/Tabbar";
+import axios from 'axios';
+// import navbar from "./components/Navbar";
+// import Vue from "vue";
+// Vue.component("navbar", navbar); // 注册全局组件
+// ES6 模块导出
+/*
+export default {
+  data() {
+    return {
+      myname: "guohai",
+      mytext: "",
+      datalist: []
+    };
+  },
+  methods: {
+    handleClick() {
+      this.myname = "tuige";
+    },
+    handleAdd() {
+      console.log(this.mytext);
+      this.datalist.push(this.mytext);
+    }
+  },
+  components: {
+    navbar
+  }
+};
+*/
+export default {
+  data() {
+    return {};
+  },
+  components: {
+    tabbar
+  },
+  mounted(){
+    // 1- 后端配置好 cors 
+    /*
+    axios.get('http://www.mei.com/appapi/home/eventForH5?params=%7B%7D&timestamp=1618210995079&summary=7142194e3afe226791217353760b4b42&platform_code=H5')
+      .then(res=>{
+        console.log(res.data);
+      });
+      */
+    // 2- 猫眼 has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. 
+    //需要使用vue的反向代理，配置在vue.config.js中的devServer设置
+    /*
+    axios.get('/ajax/movieOnInfoList?token=&optimus_uuid=92E2A7C09B6211EBB26DF56704B78AB994C95674E240480583D8A5FC955E1792&optimus_risk_level=71&optimus_code=10')
+      .then(res=>{
+        console.log(res.data);
+      });
+    */
+    // 3- 卖坐
+    // axios.get('')
+    /*
+      axios({
+        url: 'https://m.maizuo.com/gateway?cityId=510100&pageNum=1&pageSize=10&type=1&k=263451',
+        headers: {
+          'X-Client-Info' : '{"a":"3000","ch":"1002","v":"5.0.4","e":"16182920404430778456866817","bc":"510100"}',
+          'X-Host': 'mall.film-ticket.film.list'
+        },
+        method: 'GET'
+      }).then(res=>{
+        console.log(res.data);
+      });
+      */
+  }
+};
+</script>
+<style>
+/**
+li {
+  background-color: rgb(33, 146, 221);
+}
+*/
+</style>
+
 <!--
 <style lang="scss">
 #app {
@@ -30,6 +134,7 @@
 }
 </style>
 -->
+
 <!-- 
 The default setup is great for quickly prototyping a new project, while the manual setup provides more options that are likely needed for more 
 production-oriented projects.
