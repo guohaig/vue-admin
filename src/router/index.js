@@ -9,8 +9,6 @@ import Detail from "../views/film/Detail.vue";
 //用懒加载，就不需要全局导入组件了
 // import Login from "../views/Login.vue";
 
-
-
 // const routes = [
 //   {
 //     path: "/",
@@ -47,7 +45,7 @@ const routes = [
     //嵌套路由
     children: [
       {
-        path: "nowplaying",//简写
+        path: "nowplaying", //简写
         component: Nowplaying
       },
       {
@@ -55,7 +53,7 @@ const routes = [
         component: Comingsoon
       },
       {
-        path:"",
+        path: "",
         redirect: "/film/Nowplaying"
       }
     ]
@@ -77,17 +75,18 @@ const routes = [
   },
   */
   {
-   path: '/login',
-   component: ()=> import(/* webpackChunkName: "kefu-group" */ '../views/Login.vue') 
+    path: "/login",
+    component: () =>
+      import(/* webpackChunkName: "kefu-group" */ "../views/Login.vue")
   },
   {
-    name: 'myDetail',
-    path: "/detail/:myId",//动态路由Dynamic route satrt with a colon
+    name: "myDetail",
+    path: "/detail/:myId", //动态路由Dynamic route satrt with a colon
     component: Detail
   },
 
- // query 方式
- /*
+  // query 方式
+  /*
   {
     // name: 'myDetail',
     path: "/detail",

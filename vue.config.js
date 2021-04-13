@@ -66,14 +66,14 @@ module.exports = {
         before: app => {},
     },
     */
-   devServer: {
+  devServer: {
     proxy: {
-      '/ajax':{
-        target: 'https://m.maoyan.com',
+      "/ajax": {
+        target: "https://m.maoyan.com",
         changeOrigin: true
       }
     }
-   }
+  }
   /**
    * 第三方插件配置
    */

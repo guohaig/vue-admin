@@ -34,7 +34,7 @@
 
 <script>
 import tabbar from "./components/Tabbar";
-import axios from 'axios';
+// import axios from "axios";
 // import navbar from "./components/Navbar";
 // import Vue from "vue";
 // Vue.component("navbar", navbar); // 注册全局组件
@@ -69,15 +69,15 @@ export default {
   components: {
     tabbar
   },
-  mounted(){
-    // 1- 后端配置好 cors 
+  mounted() {
+    // 1- 后端配置好 cors
     /*
     axios.get('http://www.mei.com/appapi/home/eventForH5?params=%7B%7D&timestamp=1618210995079&summary=7142194e3afe226791217353760b4b42&platform_code=H5')
       .then(res=>{
         console.log(res.data);
       });
       */
-    // 2- 猫眼 has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. 
+    // 2- 猫眼 has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
     //需要使用vue的反向代理，配置在vue.config.js中的devServer设置
     /*
     axios.get('/ajax/movieOnInfoList?token=&optimus_uuid=92E2A7C09B6211EBB26DF56704B78AB994C95674E240480583D8A5FC955E1792&optimus_risk_level=71&optimus_code=10')
